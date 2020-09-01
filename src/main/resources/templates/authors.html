@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>frequency</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry, stats : ${authors}" th:with="author=${entry.value}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
